@@ -1,0 +1,203 @@
+/* 云墨阁 · 入阁门阙。入口页保持零依赖，所有纹样均由 CSS 与本地 SVG 构成。 */
+:root { color-scheme: dark; }
+* { box-sizing: border-box; }
+html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; }
+body {
+  color: #ebe5d7;
+  background: #0d1817;
+  font-family: "STKaiti", "KaiTi", "FZKai-Z03", serif;
+}
+.entry-stage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  isolation: isolate;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 43%, rgba(64, 103, 96, .42), transparent 32%),
+    radial-gradient(circle at 78% 18%, rgba(93, 71, 76, .2), transparent 26%),
+    linear-gradient(145deg, #0b1716, #122321 48%, #0b1414);
+}
+.entry-mountains { position: absolute; inset: 0; z-index: 1; overflow: hidden; opacity: .38; mix-blend-mode: screen; }
+.entry-mountains img { width: 100%; height: 100%; object-fit: cover; object-position: center 62%; filter: saturate(.57) contrast(.9) brightness(.7); transform: scale(1.08); }
+.entry-mountains::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, #081313e6, transparent 28%, #0916157d 67%, #07100fe8),
+    linear-gradient(90deg, #07111199, transparent 30% 70%, #07111199);
+}
+.entry-stage .cloud-blob { mix-blend-mode: screen; opacity: .12; }
+.entry-stage .cloud-blob--three { opacity: .08; }
+.entry-stage::before {
+  content: "";
+  position: absolute;
+  inset: 14px;
+  z-index: 6;
+  border: 1px solid rgba(218, 215, 194, .13);
+  pointer-events: none;
+  clip-path: polygon(0 0, 17% 0, 17% 1px, 83% 1px, 83% 0, 100% 0, 100% 100%, 83% 100%, 83% calc(100% - 1px), 17% calc(100% - 1px), 17% 100%, 0 100%);
+}
+.entry-stage::after {
+  content: "";
+  position: absolute;
+  inset: 24px;
+  z-index: 4;
+  pointer-events: none;
+  opacity: .32;
+  background:
+    linear-gradient(#9ca48b, #9ca48b) left top / 54px 1px no-repeat,
+    linear-gradient(#9ca48b, #9ca48b) left top / 1px 54px no-repeat,
+    linear-gradient(#9ca48b, #9ca48b) right top / 54px 1px no-repeat,
+    linear-gradient(#9ca48b, #9ca48b) right top / 1px 54px no-repeat,
+    linear-gradient(#9ca48b, #9ca48b) left bottom / 54px 1px no-repeat,
+    linear-gradient(#9ca48b, #9ca48b) left bottom / 1px 54px no-repeat,
+    linear-gradient(#9ca48b, #9ca48b) right bottom / 54px 1px no-repeat,
+    linear-gradient(#9ca48b, #9ca48b) right bottom / 1px 54px no-repeat;
+}
+.entry-canvas { position: absolute; inset: 0; z-index: 2; width: 100%; height: 100%; opacity: 0; transition: opacity 1.4s ease; }
+.is-ready .entry-canvas { opacity: .72; }
+.entry-texture {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  opacity: .32;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.16'/%3E%3C/svg%3E");
+  mix-blend-mode: overlay;
+}
+.entry-vignette { position: absolute; inset: 0; z-index: 3; pointer-events: none; background: radial-gradient(ellipse at center, transparent 22%, rgba(5, 13, 12, .28) 65%, rgba(4, 9, 9, .82) 100%); }
+
+/* 星盘与窗棂提供第二层空间感，不参与交互。 */
+.entry-orbit { position: absolute; left: 50%; top: 47%; z-index: 4; aspect-ratio: 1; border-radius: 50%; pointer-events: none; transform: translate(-50%, -50%); }
+.entry-orbit--outer { width: min(72vw, 760px); border: 1px solid rgba(157, 183, 168, .09); animation: orbit-drift 42s linear infinite; }
+.entry-orbit--outer::before, .entry-orbit--outer::after { content: ""; position: absolute; border: 1px solid rgba(186, 171, 135, .1); transform: rotate(45deg); }
+.entry-orbit--outer::before { inset: 8.5%; }
+.entry-orbit--outer::after { inset: 21%; border-style: dashed; }
+.entry-orbit--inner { width: min(46vw, 490px); border: 1px dashed rgba(132, 188, 178, .13); animation: orbit-drift-reverse 34s linear infinite; }
+.entry-orbit--inner::before { content: "◇"; position: absolute; left: 50%; top: -9px; color: rgba(192, 170, 128, .38); font: 16px/1 serif; transform: translateX(-50%); }
+.entry-lattice { position: absolute; left: 50%; z-index: 5; display: flex; align-items: center; justify-content: center; gap: 22px; width: min(45vw, 560px); height: 18px; pointer-events: none; transform: translateX(-50%); }
+.entry-lattice::before, .entry-lattice::after { content: ""; flex: 1; height: 1px; background: linear-gradient(90deg, transparent, rgba(196, 186, 153, .2)); }
+.entry-lattice::after { background: linear-gradient(90deg, rgba(196, 186, 153, .2), transparent); }
+.entry-lattice--top { top: 6.5%; }
+.entry-lattice--bottom { bottom: 6.5%; }
+.entry-lattice i { width: 8px; height: 8px; border: 1px solid rgba(193, 143, 111, .35); transform: rotate(45deg); }
+.entry-lattice i:nth-of-type(3) { width: 11px; height: 11px; border-color: rgba(192, 95, 76, .48); }
+
+.entry-center { position: absolute; inset: 0; z-index: 5; display: grid; place-items: center; text-align: center; }
+.entry-content { position: relative; width: min(94vw, 760px); opacity: 1; transform: none; }
+.js .entry-content { opacity: 0; transform: translateY(14px); transition: opacity 1.05s .22s ease, transform 1.05s .22s ease; }
+.js .is-ready .entry-content { opacity: 1; transform: none; }
+.entry-kicker { display: flex; align-items: center; justify-content: center; gap: 18px; margin: 0 0 16px; color: rgba(226, 223, 207, .58); font-family: system-ui, sans-serif; font-size: .58rem; letter-spacing: .52em; text-indent: .52em; text-transform: uppercase; }
+.entry-kicker span { color: rgba(201, 176, 135, .46); font: 400 .6rem/1 "STKaiti", "KaiTi", serif; letter-spacing: .2em; }
+.entry-title-wrap { display: flex; align-items: center; justify-content: center; gap: 22px; }
+.entry-title-wrap > i { width: min(11vw, 84px); height: 1px; background: linear-gradient(90deg, transparent, rgba(149, 198, 187, .44)); }
+.entry-title-wrap > i:last-child { background: linear-gradient(90deg, rgba(149, 198, 187, .44), transparent); }
+.entry-title { position: relative; display: inline-block; margin: 0; font-size: clamp(4.2rem, 8.5vw, 7.2rem); font-weight: 400; line-height: 1; letter-spacing: .15em; text-indent: .15em; text-shadow: 0 0 34px rgba(105, 181, 176, .15); }
+.entry-title::before { content: ""; position: absolute; left: 8%; right: 8%; top: 51%; height: 42%; z-index: -1; background: linear-gradient(90deg, transparent, rgba(14, 31, 29, .5), transparent); filter: blur(8px); }
+.entry-title::after { content: ""; position: absolute; left: 9%; right: 9%; bottom: -13px; height: 1px; background: linear-gradient(90deg, transparent, rgba(127, 197, 192, .7), rgba(169, 116, 177, .42), transparent); box-shadow: 0 0 12px rgba(86, 180, 174, .28); }
+.entry-subtitle { margin: 25px 0 7px; color: rgba(233, 228, 217, .7); font-size: clamp(.78rem, 1.6vw, .96rem); letter-spacing: .31em; text-indent: .31em; }
+.entry-subtitle b { padding-inline: 10px; color: rgba(185, 109, 84, .62); font-family: serif; font-size: .58rem; }
+
+/* 门阙 + 月洞门 + 朱砂印：整个构件都是可点击的入阁按钮。 */
+.entry-gate { position: relative; width: 294px; height: 230px; margin: 4px auto 0; }
+.entry-gate::before {
+  content: "";
+  position: absolute;
+  left: 13px;
+  right: 13px;
+  top: 34px;
+  height: 22px;
+  border: 1px solid rgba(192, 169, 125, .35);
+  background: linear-gradient(180deg, rgba(44, 60, 53, .92), rgba(20, 34, 31, .86));
+  clip-path: polygon(0 40%, 9% 40%, 14% 0, 20% 40%, 80% 40%, 86% 0, 91% 40%, 100% 40%, 96% 100%, 4% 100%);
+  box-shadow: 0 5px 18px rgba(0, 0, 0, .18);
+}
+.entry-gate::after { content: ""; position: absolute; left: 38px; right: 38px; top: 53px; bottom: 18px; border: 1px solid rgba(188, 176, 142, .2); border-top: 0; box-shadow: inset 12px 0 20px rgba(7, 16, 15, .24), inset -12px 0 20px rgba(7, 16, 15, .24); pointer-events: none; }
+.gate-plaque { position: absolute; left: 50%; top: 23px; z-index: 3; padding: 5px 13px 4px; border: 1px solid rgba(195, 151, 107, .48); color: rgba(229, 210, 169, .78); background: #263b35; font-size: .68rem; letter-spacing: .32em; text-indent: .32em; transform: translateX(-50%); box-shadow: inset 0 0 0 2px rgba(16, 29, 26, .75); }
+.gate-finial { position: absolute; left: 50%; top: 13px; z-index: 2; width: 10px; height: 10px; border: 1px solid rgba(194, 145, 105, .55); transform: translateX(-50%) rotate(45deg); }
+.enter-button { position: absolute; left: 50%; top: 60px; z-index: 4; display: grid; place-items: center; width: 146px; height: 146px; border: 1px solid rgba(190, 178, 143, .42); border-radius: 50%; color: #ead9bc; background: radial-gradient(circle, rgba(31, 52, 47, .98) 0 57%, rgba(12, 25, 23, .95) 58% 100%); text-decoration: none; transform: translateX(-50%); box-shadow: inset 0 0 0 5px rgba(13, 25, 23, .9), inset 0 0 0 6px rgba(149, 181, 161, .16), 0 0 0 8px rgba(14, 27, 25, .64), 0 15px 35px rgba(0, 0, 0, .24), 0 0 32px rgba(82, 174, 164, .08); transition: transform .45s cubic-bezier(.2,.8,.2,1), border-color .35s, box-shadow .45s; }
+.enter-button::before, .enter-button::after { content: ""; position: absolute; z-index: -1; width: 19px; height: 19px; border: solid rgba(192, 159, 113, .36); transform: rotate(45deg); }
+.enter-button::before { left: 3px; top: 3px; border-width: 1px 0 0 1px; }
+.enter-button::after { right: 3px; bottom: 3px; border-width: 0 1px 1px 0; }
+.enter-halo { position: absolute; inset: 9px; border: 1px dashed rgba(124, 193, 180, .23); border-radius: 50%; animation: halo-turn 24s linear infinite; }
+.enter-halo::before, .enter-halo::after { content: "◇"; position: absolute; left: 50%; color: rgba(208, 174, 122, .55); font: 9px/1 serif; transform: translateX(-50%); }
+.enter-halo::before { top: -5px; }
+.enter-halo::after { bottom: -5px; }
+.enter-seal { position: relative; display: grid; align-content: center; justify-items: center; width: 78px; height: 88px; border: 1px solid rgba(222, 164, 126, .74); color: #f0ddbc; background: linear-gradient(145deg, rgba(143, 61, 49, .91), rgba(104, 41, 36, .93)); clip-path: polygon(9px 0, calc(100% - 9px) 0, 100% 9px, 100% calc(100% - 9px), calc(100% - 9px) 100%, 9px 100%, 0 calc(100% - 9px), 0 9px); box-shadow: inset 0 0 0 4px rgba(92, 36, 32, .7), inset 0 0 0 5px rgba(228, 179, 136, .28), 0 0 22px rgba(136, 66, 71, .22); transition: transform .42s, background .42s, box-shadow .42s; }
+.enter-seal::before { content: ""; position: absolute; inset: 9px; border: 1px solid rgba(236, 199, 157, .31); }
+.enter-seal strong { font-size: 1.55rem; font-weight: 400; letter-spacing: .14em; text-indent: .14em; }
+.enter-seal small { margin-top: 7px; color: rgba(240, 213, 174, .56); font-family: system-ui, sans-serif; font-size: .46rem; letter-spacing: .34em; text-indent: .34em; }
+.enter-cloud { position: absolute; top: 68px; width: 35px; height: 15px; border-top: 1px solid rgba(173, 194, 170, .3); border-radius: 50%; }
+.enter-cloud::before { content: ""; position: absolute; top: -8px; width: 17px; height: 11px; border: 1px solid rgba(173, 194, 170, .24); border-bottom: 0; border-radius: 50% 50% 0 0; }
+.enter-cloud--left { left: -21px; transform: rotate(-12deg); }
+.enter-cloud--left::before { right: 1px; }
+.enter-cloud--right { right: -21px; transform: rotate(12deg) scaleX(-1); }
+.enter-cloud--right::before { right: 1px; }
+.enter-tassel { position: absolute; left: 50%; bottom: -28px; width: 1px; height: 25px; background: linear-gradient(rgba(190, 126, 94, .65), transparent); transform: translateX(-50%); }
+.enter-tassel::before { content: "◇"; position: absolute; left: 50%; top: -5px; color: rgba(211, 153, 111, .72); font: 10px/1 serif; transform: translateX(-50%); }
+.enter-tassel i { position: absolute; left: -4px; bottom: 0; width: 9px; height: 8px; border-bottom: 1px solid rgba(190, 126, 94, .45); border-radius: 50%; }
+.enter-button:hover, .enter-button:focus-visible { border-color: rgba(211, 192, 145, .72); outline: none; transform: translateX(-50%) translateY(-4px) scale(1.035); box-shadow: inset 0 0 0 5px rgba(13, 25, 23, .9), inset 0 0 0 6px rgba(164, 208, 185, .25), 0 0 0 8px rgba(14, 27, 25, .64), 0 19px 40px rgba(0, 0, 0, .3), 0 0 40px rgba(82, 174, 164, .16); }
+.enter-button:hover .enter-halo, .enter-button:focus-visible .enter-halo { animation-duration: 7s; }
+.enter-button:hover .enter-seal, .enter-button:focus-visible .enter-seal { background: linear-gradient(145deg, rgba(166, 73, 56, .96), rgba(117, 43, 37, .97)); box-shadow: inset 0 0 0 4px rgba(92, 36, 32, .7), inset 0 0 0 5px rgba(241, 194, 145, .36), 0 0 29px rgba(151, 74, 75, .33); transform: rotate(-1deg) scale(1.03); }
+.entry-invitation { display: flex; align-items: center; justify-content: center; gap: 11px; margin: -2px 0 0; color: rgba(218, 211, 188, .43); font-size: .62rem; letter-spacing: .18em; }
+.entry-invitation i { width: 15px; height: 1px; background: rgba(170, 162, 132, .25); }
+
+.entry-side-note { position: absolute; z-index: 5; top: 50%; color: rgba(221, 216, 195, .31); font-size: .66rem; letter-spacing: .25em; writing-mode: vertical-rl; transform: translateY(-50%); }
+.entry-side-note::before, .entry-side-note::after { content: ""; display: block; width: 1px; height: 42px; margin: 13px auto; background: linear-gradient(transparent, rgba(196, 185, 151, .3), transparent); }
+.entry-side-note--left { left: 6.2%; }
+.entry-side-note--right { right: 6.2%; }
+.entry-corner { position: absolute; z-index: 5; color: rgba(220, 220, 202, .3); font-size: .63rem; letter-spacing: .2em; writing-mode: vertical-rl; }
+.entry-corner--left { left: 31px; bottom: 31px; }
+.entry-corner--right { right: 31px; top: 31px; }
+.entry-footer-mark { position: absolute; left: 50%; bottom: 24px; z-index: 5; display: flex; align-items: center; gap: 10px; color: rgba(215, 207, 181, .3); transform: translateX(-50%); }
+.entry-footer-mark span { width: 34px; height: 1px; background: linear-gradient(90deg, transparent, rgba(191, 176, 139, .3)); }
+.entry-footer-mark span:last-child { background: linear-gradient(90deg, rgba(191, 176, 139, .3), transparent); }
+.entry-footer-mark b { font-size: .54rem; font-weight: 400; letter-spacing: .28em; white-space: nowrap; }
+.entry-loading { display: none; position: absolute; left: 50%; bottom: 9%; z-index: 7; color: rgba(227, 224, 210, .45); font: .58rem/1 system-ui, sans-serif; letter-spacing: .3em; transform: translateX(-50%); transition: opacity .4s; }
+.js .entry-loading { display: block; }
+.is-ready .entry-loading { opacity: 0; }
+.entry-motion-toggle { position: absolute; right: 28px; bottom: 24px; z-index: 7; padding: 7px 9px; border: 1px solid rgba(220, 220, 202, .18); color: rgba(226, 223, 207, .5); background: rgba(10, 20, 19, .35); cursor: pointer; font: .56rem/1 system-ui, sans-serif; letter-spacing: .12em; }
+.entry-motion-toggle:hover, .entry-motion-toggle:focus-visible { color: #eee6d2; border-color: rgba(155, 210, 202, .55); outline: none; }
+.motion-paused .cloud-blob, .motion-paused .tech-line, .motion-paused .enter-halo, .motion-paused .entry-orbit { animation-play-state: paused !important; }
+.entry-stage.is-leaving { animation: entry-leave .85s cubic-bezier(.65,0,.35,1) both; }
+
+@keyframes halo-turn { to { transform: rotate(360deg); } }
+@keyframes orbit-drift { to { transform: translate(-50%, -50%) rotate(360deg); } }
+@keyframes orbit-drift-reverse { to { transform: translate(-50%, -50%) rotate(-360deg); } }
+@keyframes entry-leave { to { opacity: 0; filter: blur(8px); transform: scale(1.035); } }
+
+@media (max-width: 700px) {
+  .entry-stage::before { inset: 8px; }
+  .entry-stage::after { inset: 15px; opacity: .24; }
+  .entry-lattice { width: 62vw; gap: 13px; }
+  .entry-lattice--top { top: 4.5%; }
+  .entry-lattice--bottom { bottom: 4.5%; }
+  .entry-side-note, .entry-corner { display: none; }
+  .entry-orbit--outer { width: 122vw; }
+  .entry-orbit--inner { width: 86vw; }
+  .entry-kicker { gap: 10px; font-size: .5rem; letter-spacing: .31em; text-indent: .31em; }
+  .entry-kicker span { display: none; }
+  .entry-title-wrap { gap: 12px; }
+  .entry-title-wrap > i { width: 34px; }
+  .entry-title { font-size: clamp(3.75rem, 18vw, 5.15rem); }
+  .entry-subtitle { margin-top: 24px; font-size: .76rem; letter-spacing: .2em; text-indent: .2em; }
+  .entry-gate { transform: scale(.92); margin-top: -2px; }
+  .entry-invitation { margin-top: -12px; }
+  .entry-motion-toggle { right: 13px; bottom: 12px; }
+  .entry-footer-mark { bottom: 16px; }
+}
+@media (max-height: 740px) {
+  .entry-content { transform: scale(.88); }
+  .js .entry-content { transform: translateY(12px) scale(.88); }
+  .js .is-ready .entry-content { transform: scale(.88); }
+  .entry-lattice--top { top: 3%; }
+  .entry-lattice--bottom { bottom: 3%; }
+  .entry-footer-mark { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .enter-halo, .entry-orbit { animation: none; }
+  .entry-content, .entry-canvas { transition-duration: .01ms; }
+  .enter-button { transition-duration: .01ms; }
+}

@@ -1,0 +1,10 @@
+[
+  { "id": "static-site", "name": "静态站点", "color": "#2f6f73" },
+  { "id": "github-pages", "name": "GitHub Pages", "color": "#53679e" },
+  { "id": "css", "name": "CSS", "color": "#875d9d" },
+  { "id": "javascript", "name": "JavaScript", "color": "#7c4d2d" },
+  { "id": "design", "name": "东方设计", "color": "#9a473f" },
+  { "id": "ai", "name": "人工智能", "color": "#4f668f" },
+  { "id": "reading", "name": "阅读", "color": "#65734a" },
+  { "id": "performance", "name": "性能", "color": "#76584a" }
+]

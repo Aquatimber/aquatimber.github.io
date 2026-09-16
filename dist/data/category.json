@@ -1,0 +1,30 @@
+[
+  {
+    "id": "technology",
+    "name": "格物技术",
+    "description": "探究软件、网络与智能系统的内在纹理",
+    "icon": "器",
+    "children": [
+      { "id": "frontend", "name": "前端札记", "description": "关于界面、浏览器与可访问性" },
+      { "id": "ai", "name": "智能新知", "description": "人工智能的实践与思考" }
+    ]
+  },
+  {
+    "id": "aesthetics",
+    "name": "造境美学",
+    "description": "记录视觉、交互与东方设计语言",
+    "icon": "境",
+    "children": [
+      { "id": "design", "name": "设计手记", "description": "从传统意象到数字界面" }
+    ]
+  },
+  {
+    "id": "life",
+    "name": "山居日常",
+    "description": "读书、行路与日常感知",
+    "icon": "闲",
+    "children": [
+      { "id": "reading", "name": "读书偶记", "description": "纸页间的片刻停留" }
+    ]
+  }
+]

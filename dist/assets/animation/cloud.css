@@ -1,0 +1,25 @@
+/* 背景流云和微弱科技流线 */
+.cloud-veil { position: absolute; inset: -12%; overflow: hidden; pointer-events: none; }
+.cloud-blob { position: absolute; border-radius: 48%; filter: blur(52px); opacity: .28; mix-blend-mode: multiply; will-change: transform; }
+.cloud-blob--one { width: 56vw; height: 40vw; left: -8%; top: 4%; background: #315e60; animation: cloud-drift-a 19s ease-in-out infinite alternate; }
+.cloud-blob--two { width: 58vw; height: 43vw; right: -8%; top: 15%; background: #74566e; animation: cloud-drift-b 24s ease-in-out infinite alternate; }
+.cloud-blob--three { width: 64vw; height: 38vw; left: 17%; bottom: -10%; background: #a25245; opacity: .19; animation: cloud-drift-c 27s ease-in-out infinite alternate; }
+.cloud-blob--four { width: 43vw; height: 35vw; left: 36%; top: -13%; background: #446b8a; opacity: .22; animation: cloud-drift-b 21s ease-in-out infinite alternate-reverse; }
+.cloud-ink { position: absolute; inset: 0; opacity: .35; filter: url(#ink-soften); }
+.tech-lines { position: absolute; inset: 0; opacity: .28; overflow: hidden; }
+.tech-line { position: absolute; width: 38vw; height: 1px; background: linear-gradient(90deg, transparent, rgba(150,225,219,.72), rgba(184,128,198,.45), transparent); box-shadow: 0 0 9px rgba(102,190,185,.35); transform: rotate(-14deg); animation: line-flow 9s linear infinite; }
+.tech-line:nth-child(1) { left: -18%; top: 25%; }
+.tech-line:nth-child(2) { right: -15%; top: 58%; animation-delay: -3s; transform: rotate(18deg); }
+.tech-line:nth-child(3) { left: 32%; bottom: 13%; animation-delay: -6s; }
+
+@keyframes cloud-drift-a { to { transform: translate3d(18%, 9%, 0) scale(1.12) rotate(7deg); } }
+@keyframes cloud-drift-b { to { transform: translate3d(-16%, 12%, 0) scale(1.18) rotate(-8deg); } }
+@keyframes cloud-drift-c { to { transform: translate3d(6%, -16%, 0) scale(1.1) rotate(5deg); } }
+@keyframes line-flow { 0% { translate: -25vw 0; opacity: 0; } 25%, 72% { opacity: .7; } 100% { translate: 75vw 0; opacity: 0; } }
+
+@media (prefers-color-scheme: dark) {
+  .cloud-blob { mix-blend-mode: screen; opacity: .16; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cloud-blob, .tech-line { animation: none; }
+}

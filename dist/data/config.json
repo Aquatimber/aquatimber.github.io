@@ -1,0 +1,42 @@
+{
+  "site": {
+    "name": "云墨阁",
+    "shortName": "云墨",
+    "title": "云墨阁 · 观技术之道，记造物之思",
+    "description": "一座融合东方美学与现代技术的静态数字书阁",
+    "keywords": ["前端", "设计", "人工智能", "国风", "静态博客"],
+    "language": "zh-CN",
+    "url": "",
+    "themeColor": "#122e30",
+    "author": "墨川",
+    "notice": "松间明月长如此，身外浮云何足论。愿这里的文字，与你偶然相照。",
+    "postsPerPage": 6,
+    "defaultTheme": "auto"
+  },
+  "owner": {
+    "name": "墨川",
+    "title": "数字造物者 / 独立开发者",
+    "avatar": "assets/images/avatar.svg",
+    "bio": "写代码，也写山水；关注轻量技术、产品体验与东方数字美学。",
+    "location": "杭州",
+    "email": "hello@example.com",
+    "socials": [
+      { "name": "GitHub", "url": "https://github.com/", "icon": "⌘" },
+      { "name": "即刻", "url": "https://web.okjike.com/", "icon": "◌" },
+      { "name": "邮箱", "url": "mailto:hello@example.com", "icon": "✉" }
+    ]
+  },
+  "navigation": [
+    { "label": "卷首", "url": "pages/index.html", "page": "home" },
+    { "label": "归档", "url": "pages/archive.html", "page": "archive" },
+    { "label": "分类", "url": "pages/category.html", "page": "category" },
+    { "label": "签笺", "url": "pages/tag.html", "page": "tag" },
+    { "label": "知我", "url": "pages/about.html", "page": "about" },
+    { "label": "芳邻", "url": "pages/link.html", "page": "link" }
+  ],
+  "footer": {
+    "copyright": "© 2026 云墨阁",
+    "slogan": "以像素为墨，以逻辑为山河",
+    "icp": ""
+  }
+}

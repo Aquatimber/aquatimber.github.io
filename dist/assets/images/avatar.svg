@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240">
+  <defs>
+    <radialGradient id="paper"><stop stop-color="#f4eee0"/><stop offset="1" stop-color="#c8c4b4"/></radialGradient>
+    <linearGradient id="robe" x2="1" y2="1"><stop stop-color="#294e52"/><stop offset="1" stop-color="#59415f"/></linearGradient>
+    <filter id="soft"><feGaussianBlur stdDeviation="7"/></filter>
+  </defs>
+  <rect width="240" height="240" fill="url(#paper)"/>
+  <path d="M-10 50Q55 18 103 48T252 35v48Q183 111 126 75T-8 99z" fill="#597779" opacity=".2" filter="url(#soft)"/>
+  <circle cx="120" cy="100" r="47" fill="#ddc7a9"/>
+  <path d="M72 102Q68 43 118 42q54 1 51 61-17-22-46-28-23 22-51 27z" fill="#252d2d"/>
+  <path d="M34 240q11-84 86-88 76 5 86 88z" fill="url(#robe)"/>
+  <path d="M98 151l22 35 23-35 15 13-38 59-38-59z" fill="#e9e0cd" opacity=".8"/>
+  <circle cx="102" cy="101" r="3" fill="#36312e"/><circle cx="139" cy="101" r="3" fill="#36312e"/>
+  <path d="M108 126q13 8 25 0" fill="none" stroke="#795f55" stroke-width="3" stroke-linecap="round"/>
+  <rect x="8" y="8" width="224" height="224" fill="none" stroke="#855046" stroke-width="3" opacity=".55"/>
+</svg>

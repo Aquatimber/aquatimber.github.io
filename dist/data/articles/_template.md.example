@@ -1,0 +1,20 @@
+---
+title: 在这里填写文章标题
+slug: unique-english-slug
+date: 2026-07-16
+updated: 2026-07-16
+category: frontend
+tags: [javascript, performance]
+cover: gradient-cyan
+featured: false
+views: 0
+excerpt: 用一两句话概括文章内容，这段文字会显示在文章卡片和搜索结果中。
+---
+
+# 在这里填写文章标题
+
+文章开篇。
+
+## 第一节
+
+正文支持标题、列表、引用、链接、行内代码、代码块和表格等常用 Markdown 语法。

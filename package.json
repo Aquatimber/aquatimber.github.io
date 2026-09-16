@@ -1,0 +1,16 @@
+{
+  "name": "yunmo-static-blog",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "国风科技炫彩纯静态博客",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "check": "node scripts/validate-site.mjs",
+    "dev": "node scripts/dev.mjs",
+    "preview": "node scripts/dev.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

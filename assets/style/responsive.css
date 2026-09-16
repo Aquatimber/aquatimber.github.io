@@ -1,0 +1,104 @@
+/* 响应式与触控设备优化 */
+@media (max-width: 1180px) {
+  .content-grid { grid-template-columns: 210px minmax(0, 1fr) 48px; gap: 20px; }
+  .article-grid { grid-template-columns: 1fr; }
+  .category-tree, .link-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 960px) {
+  :root { --header-height: 64px; }
+  .container, .page-main--inner { width: min(calc(100% - 34px), var(--content-width)); }
+  .site-nav {
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    right: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    height: auto;
+    padding: 12px 18px 18px;
+    border-bottom: 1px solid var(--line);
+    background: color-mix(in srgb, var(--paper) 94%, transparent);
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(20px);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-12px);
+    transition: .28s var(--ease);
+  }
+  .site-nav.open { opacity: 1; visibility: visible; transform: none; }
+  .nav-link { min-height: 42px; }
+  .nav-link::after { bottom: 4px; }
+  .menu-toggle { display: grid; }
+  .brand-copy small { display: none; }
+  .home-hero { grid-template-columns: 1fr 260px; }
+  .hero-copy { padding: 45px 34px; }
+  .content-grid { grid-template-columns: minmax(0, 1fr) 48px; }
+  .scroll-sidebar { display: none; }
+  .article-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .article-layout { grid-template-columns: 1fr; }
+  .article-aside { position: static; grid-row: 1; }
+  .toc-panel { padding: 16px 20px; }
+  .toc-list { display: flex; gap: 5px 12px; overflow-x: auto; }
+  .toc-list li { flex: none; }
+  .toc-list li.level-3 { padding-left: 0; }
+  .toc-list a { border-left: 0; border-bottom: 1px solid var(--line); }
+  .about-grid { grid-template-columns: 250px 1fr; }
+  .value-list { grid-template-columns: 1fr; }
+  .message-list { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 720px) {
+  body { font-size: 15px; }
+  .container, .page-main--inner { width: min(calc(100% - 24px), var(--content-width)); }
+  .page-main { padding-top: 24px; }
+  .site-header::before, .site-header::after { display: none; }
+  .site-brand { gap: 9px; }
+  .brand-seal { width: 34px; height: 34px; }
+  .brand-copy strong { font-size: 1rem; }
+  .nav-actions .theme-header-btn { display: none; }
+  .home-hero { grid-template-columns: 1fr; min-height: 0; }
+  .hero-copy { padding: 43px 26px; }
+  .hero-copy h1 { font-size: clamp(2.1rem, 11vw, 3.3rem); }
+  .content-grid { display: block; }
+  .article-grid { grid-template-columns: 1fr; }
+  .floating-tools { position: fixed; z-index: 90; top: auto; right: 12px; bottom: 18px; gap: 7px; }
+  .floating-tools .tool-wrap:nth-child(3) { display: none; }
+  .tool-btn { width: 40px; height: 40px; border-radius: 50%; box-shadow: var(--shadow-soft); }
+  .tool-label { display: none; }
+  .progress-ring svg { width: 42px; height: 42px; }
+  .page-heading { margin-bottom: 24px; padding: 29px 24px 26px; }
+  .category-tree, .link-grid { grid-template-columns: 1fr; }
+  .tag-cloud-stage { min-height: 230px; padding: 38px 24px; }
+  .archive-timeline { padding-left: 40px; }
+  .archive-timeline::before { left: 10px; }
+  .archive-year > h2::before { left: -39px; }
+  .archive-item { grid-template-columns: 48px 1fr; gap: 9px; padding-inline: 4px; }
+  .archive-item span { display: none; }
+  .about-grid { grid-template-columns: 1fr; }
+  .profile-card { position: static; }
+  .message-list { grid-template-columns: 1fr; }
+  .article-paper { padding: 35px 24px; }
+  .article-paper::before { inset: 7px; }
+  .article-header h1 { font-size: clamp(1.9rem, 9vw, 2.65rem); }
+  .article-content { font-size: 1rem; line-height: 1.9; }
+  .article-content h2 { font-size: 1.5rem; }
+  .article-content pre { margin-inline: -12px; }
+  .article-content table { display: block; overflow-x: auto; white-space: nowrap; }
+  .article-nav { grid-template-columns: 1fr; }
+  .article-nav a + a { text-align: left; border-top: 1px solid var(--line); border-left: 0; }
+  .search-scroll { padding-inline: 22px; }
+  .search-scroll::before, .search-scroll::after { margin-inline: -32px; }
+  .search-box kbd { display: none; }
+}
+
+@media (max-width: 420px) {
+  .site-nav { grid-template-columns: repeat(2, 1fr); }
+  .brand-copy { display: none; }
+  .page-heading p { font-size: .9rem; }
+  .card-cover { height: 105px; }
+}
+
+@media (hover: none) {
+  .article-card:hover, .link-card:hover { transform: none; }
+}

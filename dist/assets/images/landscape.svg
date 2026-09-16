@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" fill="none">
+  <defs>
+    <linearGradient id="sky" x1="300" y1="40" x2="840" y2="680" gradientUnits="userSpaceOnUse"><stop stop-color="#193e42"/><stop offset=".55" stop-color="#355b5a"/><stop offset="1" stop-color="#a79880"/></linearGradient>
+    <linearGradient id="moon" x1="640" y1="80" x2="800" y2="360" gradientUnits="userSpaceOnUse"><stop stop-color="#d3bc8b"/><stop offset="1" stop-color="#ab8375" stop-opacity=".12"/></linearGradient>
+    <linearGradient id="ridge" x1="700" y1="220" x2="540" y2="630" gradientUnits="userSpaceOnUse"><stop stop-color="#5c9290"/><stop offset="1" stop-color="#173c41"/></linearGradient>
+    <linearGradient id="near" x1="420" y1="340" x2="1000" y2="700" gradientUnits="userSpaceOnUse"><stop stop-color="#315957"/><stop offset="1" stop-color="#0f272d"/></linearGradient>
+    <linearGradient id="water" x1="680" y1="500" x2="880" y2="780" gradientUnits="userSpaceOnUse"><stop stop-color="#bdc5af" stop-opacity=".65"/><stop offset="1" stop-color="#83a7a0" stop-opacity=".05"/></linearGradient>
+    <filter id="mist"><feGaussianBlur stdDeviation="18"/></filter>
+    <filter id="grain"><feTurbulence baseFrequency=".035 .16" numOctaves="3" seed="8" type="fractalNoise"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="linear" slope=".11"/></feComponentTransfer><feBlend in="SourceGraphic" mode="soft-light"/></filter>
+  </defs>
+  <path fill="url(#sky)" d="M0 0h1200v720H0z"/>
+  <circle cx="790" cy="216" r="128" fill="url(#moon)" opacity=".84"/>
+  <circle cx="790" cy="216" r="145" stroke="#d7c19a" stroke-opacity=".24"/>
+  <circle cx="790" cy="216" r="156" stroke="#91b4b0" stroke-opacity=".15" stroke-dasharray="2 10"/>
+  <g filter="url(#grain)">
+    <path d="M160 477 273 354 308 367 397 257 444 321 477 294 552 371 634 281 669 319 701 268 750 331 797 314 862 383 945 272 979 304 1044 265 1090 310 1200 252v468H160z" fill="#7b9991" opacity=".32"/>
+    <path d="m250 605 109-140 31 10 61-99 41 27 43-48 59-51 39 53 33-26 54 91 58-21 42 42 79-132 26 29 41-80 51 68 65 21 34-42 139 158v250H250z" fill="url(#ridge)"/>
+    <path d="m494 359 34 23 62 70-24-78 28-70-49 44-53 55-41-27-62 99 28-17 55-53zm310 49 20-43 30 33 51-118-42 79-26-29-48 77z" fill="#a4b7a5" opacity=".28"/>
+    <path d="m0 544 147-99 23 21 104-124 31 72 37-6 69 121 70-28 34 31 87-95 73 61 40-12 67 80 98-81 43 26 44-19 96 99 43-52 37 4 36-44 86 9v215H0z" fill="url(#near)"/>
+    <path d="m274 342-59 112 37-27 43 47-16-65 26 5zm327 95-49 85 42-39 39 27-18-50z" fill="#92b8a7" opacity=".24"/>
+    <path d="M572 591c91-34 190-13 231-21 33-6 25-23 44-26 65-11 120 33 86 61-27 23-155 17-118 45 38 29 182 21 200 70H571c84-28 199-38 145-70-28-16-138-16-144-59z" fill="url(#water)"/>
+    <path d="M0 561c170-6 214 71 365 68 93-2 174-43 215-23l-55 46 126 68H0zm1200 8-120-37-19 59-75 31 54 19-74 41 13 38h221z" fill="#132d31"/>
+  </g>
+  <g fill="#b8cfc2" opacity=".17" filter="url(#mist)"><ellipse cx="720" cy="479" rx="314" ry="22"/><ellipse cx="415" cy="561" rx="300" ry="19"/><ellipse cx="964" cy="372" rx="204" ry="16"/></g>
+  <g stroke="#a4c4b6" stroke-opacity=".25" stroke-width="1"><path d="M342 517c148-8 203 5 347 2m-275 9c82-5 150 8 226 1m159 65 75-4m-25 17 45-2m-97 53 49 2m-81 8 92 6"/><path d="m508 436 11 57-36 46m143-85 29 54-11 27m258-101-19 53 26 30"/></g>
+  <g transform="translate(373 521)" fill="#11282b" stroke="#a7ad91" stroke-width="1.2"><path d="M-37 6Q-12 0 0-12 12 0 37 6L29 10h-58z"/><path d="M-22 11h44v30h-44z"/><path d="M-27 39h54v5h-54z"/><path d="M-15 13v24M0 13v24M15 13v24"/><path d="M-22 26h44" stroke-opacity=".35"/></g>
+  <g stroke="#122d2f" stroke-width="3"><path d="m348 570-12-62m-1 6-15-20m17 31 18-18"/></g>
+  <g fill="#193b3c"><ellipse cx="320" cy="491" rx="26" ry="8"/><ellipse cx="346" cy="503" rx="30" ry="8"/><ellipse cx="333" cy="480" rx="18" ry="7"/></g>
+  <g stroke="#d9c8a5" stroke-opacity=".56" stroke-width="1.1"><path d="m700 252 10 4 8-7m-49 22 9 2 8-6m22-24 8 2 6-5"/></g>
+  <path d="M48 628c264-141 401 137 656-11 122-71 225-14 425-171" stroke="#86bfb8" stroke-opacity=".38"/>
+  <path d="M69 641c249-143 409 139 645-7 134-84 246-7 416-171" stroke="#a090b3" stroke-opacity=".2"/>
+  <g fill="#b5d9cd"><circle cx="656" cy="641" r="2.4"/><circle cx="982" cy="538" r="2"/><circle cx="223" cy="582" r="1.5"/></g>
+</svg>

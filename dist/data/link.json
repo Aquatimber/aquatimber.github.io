@@ -1,0 +1,23 @@
+[
+  {
+    "name": "开往",
+    "url": "https://www.travellings.cn/",
+    "avatar": "assets/images/link-travelling.svg",
+    "description": "友链接力，驶向不同的个人站点",
+    "status": "active"
+  },
+  {
+    "name": "MDN Web Docs",
+    "url": "https://developer.mozilla.org/zh-CN/",
+    "avatar": "assets/images/link-mdn.svg",
+    "description": "可靠而详尽的 Web 技术文档",
+    "status": "active"
+  },
+  {
+    "name": "GitHub",
+    "url": "https://github.com/",
+    "avatar": "assets/images/link-github.svg",
+    "description": "代码、协作与开放知识的群山",
+    "status": "active"
+  }
+]
