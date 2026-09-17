@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://aquatimber.github.io/sitemap.xml

@@ -1,6 +1,6 @@
 ---
 title: 初次见面
-slug: unique-english-slug
+slug: first-meeting
 date: 2026-09-17
 updated: 2026-09-17
 category: frontend
@@ -8,7 +8,7 @@ tags: [github-pages]
 cover: gradient-cyan
 featured: false
 views: 0
-excerpt: 用一两句话概括文章内容，这段文字会显示在文章卡片和搜索结果中。
+excerpt: 记录云墨阁第一次完成构建与部署的过程，也从这里开始书写技术、设计与数字造物。
 ---
 
 # 初次见面
