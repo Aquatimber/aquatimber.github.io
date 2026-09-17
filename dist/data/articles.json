@@ -1,150 +1,26 @@
 [
   {
-    "title": "用 CSS 写一阵穿过松林的风",
-    "slug": "wind-in-css",
-    "date": "2026-07-12",
-    "updated": "2026-07-14",
-    "category": "design",
-    "tags": [
-      "css",
-      "design",
-      "performance"
-    ],
-    "cover": "gradient-ink",
-    "featured": true,
-    "views": 1286,
-    "excerpt": "不依赖图片与三维引擎，仅以渐变、滤镜和缓动，让界面拥有东方绘画里的气韵与留白。",
-    "wordCount": 361,
-    "readingTime": 1,
-    "source": "data/articles/2026-07-12-wind-in-css.md",
-    "categoryName": "设计手记",
-    "tagNames": [
-      "CSS",
-      "东方设计",
-      "性能"
-    ],
-    "url": "posts/wind-in-css/"
-  },
-  {
-    "title": "一座无需后端的数字书阁",
-    "slug": "static-blog-architecture",
-    "date": "2026-06-28",
-    "updated": "2026-07-01",
+    "title": "初次见面",
+    "slug": "unique-english-slug",
+    "date": "2026-09-17",
+    "updated": "2026-09-17",
     "category": "frontend",
     "tags": [
-      "static-site",
-      "github-pages",
       "javascript",
       "performance"
     ],
     "cover": "gradient-cyan",
-    "featured": true,
-    "views": 2341,
-    "excerpt": "用 Markdown 保存思想，以 JSON 组织索引，在纯静态托管上实现搜索、筛选、归档与文章详情。",
-    "wordCount": 367,
-    "readingTime": 1,
-    "source": "data/articles/2026-06-28-static-blog-architecture.md",
-    "categoryName": "前端札记",
-    "tagNames": [
-      "静态站点",
-      "GitHub Pages",
-      "JavaScript",
-      "性能"
-    ],
-    "url": "posts/static-blog-architecture/"
-  },
-  {
-    "title": "与智能工具共事：保留手艺人的判断",
-    "slug": "ai-and-craft",
-    "date": "2026-05-19",
-    "updated": "2026-05-19",
-    "category": "ai",
-    "tags": [
-      "ai",
-      "design"
-    ],
-    "cover": "gradient-violet",
     "featured": false,
-    "views": 967,
-    "excerpt": "工具擅长扩展可能性，而创作者仍需负责取舍、语境与最后一厘米的质感。",
-    "wordCount": 220,
+    "views": 0,
+    "excerpt": "用一两句话概括文章内容，这段文字会显示在文章卡片和搜索结果中。",
+    "wordCount": 22,
     "readingTime": 1,
-    "source": "data/articles/2026-05-19-ai-and-craft.md",
-    "categoryName": "智能新知",
-    "tagNames": [
-      "人工智能",
-      "东方设计"
-    ],
-    "url": "posts/ai-and-craft/"
-  },
-  {
-    "title": "从黛青到月白：界面中的传统色谱",
-    "slug": "ink-color-system",
-    "date": "2026-04-07",
-    "updated": "2026-04-12",
-    "category": "design",
-    "tags": [
-      "design",
-      "css"
-    ],
-    "cover": "gradient-red",
-    "featured": true,
-    "views": 1788,
-    "excerpt": "传统色并非一张固定色值表，而是一组关于材料、光线和关系的叙事。",
-    "wordCount": 239,
-    "readingTime": 1,
-    "source": "data/articles/2026-04-07-ink-color-system.md",
-    "categoryName": "设计手记",
-    "tagNames": [
-      "东方设计",
-      "CSS"
-    ],
-    "url": "posts/ink-color-system/"
-  },
-  {
-    "title": "冬至读书：慢下来才能看见的文字",
-    "slug": "winter-reading",
-    "date": "2025-12-22",
-    "updated": "2025-12-22",
-    "category": "reading",
-    "tags": [
-      "reading"
-    ],
-    "cover": "gradient-paper",
-    "featured": false,
-    "views": 621,
-    "excerpt": "在一年最长的夜里重读旧书，记下纸张、灯影与三个迟到的答案。",
-    "wordCount": 198,
-    "readingTime": 1,
-    "source": "data/articles/2025-12-22-winter-reading.md",
-    "categoryName": "读书偶记",
-    "tagNames": [
-      "阅读"
-    ],
-    "url": "posts/winter-reading/"
-  },
-  {
-    "title": "可访问性不是附录，而是界面的骨架",
-    "slug": "web-accessibility",
-    "date": "2025-10-03",
-    "updated": "2025-10-08",
-    "category": "frontend",
-    "tags": [
-      "javascript",
-      "performance"
-    ],
-    "cover": "gradient-blue",
-    "featured": false,
-    "views": 1135,
-    "excerpt": "从语义结构、键盘操作到动态偏好，让漂亮的网页也成为每个人都能进入的空间。",
-    "wordCount": 243,
-    "readingTime": 1,
-    "source": "data/articles/2025-10-03-web-accessibility.md",
+    "source": "data/articles/1st.md",
     "categoryName": "前端札记",
     "tagNames": [
       "JavaScript",
       "性能"
     ],
-    "url": "posts/web-accessibility/"
+    "url": "posts/unique-english-slug/"
   }
 ]

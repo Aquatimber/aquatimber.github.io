@@ -106,6 +106,10 @@ async function main() {
     articles.push({ ...article, categoryName: categories.get(article.category), tagNames: article.tags.map((tag) => tags.get(tag)) });
   }
 
+  if (!articles.length) {
+    throw new Error('data/articles: 未找到 Markdown 文章，已中止构建，避免发布空站点');
+  }
+
   articles.sort((a, b) => b.date.localeCompare(a.date));
   const output = join(projectRoot, 'data', 'articles.json');
   const searchOutput = join(projectRoot, 'data', 'search-index.json');

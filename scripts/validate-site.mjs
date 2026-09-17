@@ -52,6 +52,8 @@ async function main() {
 
   const articles = JSON.parse(await readFile(join(targetRoot, 'data/articles.json'), 'utf8'));
   const searchIndex = JSON.parse(await readFile(join(targetRoot, 'data/search-index.json'), 'utf8'));
+  if (!Array.isArray(articles) || articles.length === 0) fail('文章索引为空，至少需要一篇 Markdown 文章');
+  if (!Array.isArray(searchIndex) || searchIndex.length === 0) fail('全文搜索索引为空，至少需要一篇文章');
   const slugs = new Set();
   for (const article of articles) {
     if (!article.slug || !article.title || !article.source) fail(`文章索引字段不完整：${JSON.stringify(article)}`);
