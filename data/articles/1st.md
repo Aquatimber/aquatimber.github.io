@@ -4,7 +4,7 @@ slug: unique-english-slug
 date: 2026-09-17
 updated: 2026-09-17
 category: frontend
-tags: []
+tags: [Github Pages]
 cover: gradient-cyan
 featured: false
 views: 0
